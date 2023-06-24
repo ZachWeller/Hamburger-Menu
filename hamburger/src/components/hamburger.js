@@ -1,48 +1,58 @@
 import React, { useState } from "react";
-import { slide as Menu } from "react-burger-menu";
 import logo from "../logo.svg";
 import "./hamburger.css";
 
 const BurgerMenu = () => {
+  //Use state to tell if the menu is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleMenuStatus = () => {
-    setIsOpen(true);
-  };
+  //Grabbing the class of both the button and the menu div
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const button = document.querySelector(".hamburger");
 
-  if (isOpen == true) {
-    return ;
-  }
+  const handleMenuStatus = () => {
+    const menu = document.getElementById("hamburger-menu");
+    const menuText = document.getElementById("menu-text");
+    menu.classList.toggle("toggle");
+    menuText.classList.toggle("toggle");
+  };
 
   return (
     <>
-      <div className="hamburger-menu">
+      <div className="hamburger-menu" id="hamburger-menu">
         <button className="hamburger" onClick={handleMenuStatus}>
           <div className="burger burger1" />
           <div className="burger burger2" />
           <div className="burger burger3" />
         </button>
-        <div className="menu-image-container">
-          <a href="/">
-            <img src={logo} alt="Menu Item 1" className="menu-image" />
-          </a>
-          <a href="/">
-            <img src={logo} alt="Menu Item 2" className="menu-image" />
-          </a>
-          <a href="/">
-            <img src={logo} alt="Menu Item 3" className="menu-image" />
-          </a>
-          <a href="/">
-            <img src={logo} alt="Menu Item 4" className="menu-image" />
-          </a>
-        </div>
-        {isOpen && (
-          <div
-          className={`background-div2 ${showAnimatedDiv ? "visible" : ""}`}
-          >
-            
+        <div className="menu-image-container" id="menu-image-container">
+          <div className="menu-item">
+            <a href="/">
+              <img src={logo} alt="Menu Item 1" className="menu-image" />
+            </a>
+            <div className="menu-text" id="menu-text">
+              Item 1
+            </div>
           </div>
-        )}
+
+          <div className="menu-item">
+            <a href="/">
+              <img src={logo} alt="Menu Item 2" className="menu-image" />
+            </a>
+          </div>
+
+          <div className="menu-item">
+            <a href="/">
+              <img src={logo} alt="Menu Item 3" className="menu-image" />
+            </a>
+          </div>
+          <div className="menu-item">
+            <a href="/">
+              <img src={logo} alt="Menu Item 4" className="menu-image" />
+            </a>
+          </div>
+        </div>
+        <div></div>
       </div>
     </>
     // <Menu>

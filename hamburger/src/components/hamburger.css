@@ -1,99 +1,44 @@
-.bm-menu {
-    background-color: #333;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
-  
-  /* CSS for the clickable image */
-  .bm-menu a.menu-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  /* CSS for the text displayed when the menu is open */
-  .bm-menu div {
-    color: #000000;
-    padding: 1em;
-  }
-
-  .bm-burger-button {
-    position: absolute;
-    width: 25px;
-    height: 20px;
-    left: 20px;
-    top: 100px;
-    color: #000000;
-  }
-
-  .bm-burger-bars {
-    background: #373a47;
-  }
-
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-
-  .bm-cross {
-    background: #bdc3c7;
-  }
-
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-  }
-
-  .menu-item{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #333;
-  padding: 1rem;
-  }
-
-  .menu-item span{
-    margin-left: 0.5rem;
-  }
-
-  .hamburger{
-    width: 40px;
-    height: 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
-    z-index: 10;
-    border: none;
-    background-color: #424242;
-  }
-
-  .hamburger:focus{
-    outline: none;
-  }
-
-  .burger{
-    display: flex;
-    flex-direction: column;
-    width: 30px;
-    height: 0.25rem;
-    transform: translateX(-1px)translateY(2px);
-    border-radius: 10px;
-    background-color: #242424;
-    transition:all 0.3s linear;
-}
-
 .hamburger-menu{
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #424242;
   width: 90px;
-  height: 300px
+  height: 300px;
 }
+
+.hamburger-menu.toggle{
+  width: 200px;
+  align-items: flex-start;
+}
+
+.hamburger{
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 10;
+  border: none;
+  background-color: #424242;
+}
+
+.hamburger:focus{
+  outline: none;
+}
+
+.burger{
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 0.25rem;
+  transform: translateX(-1px)translateY(2px);
+  border-radius: 10px;
+  background-color: #242424;
+  transition:all 0.3s linear;
+}
+  
+
 
 .menu-image-container{
   display: flex;
@@ -108,3 +53,25 @@
   height: 60px;
   border: #000000 solid 1px, ;
 }
+
+.menu-item{
+  display: flex;
+}
+
+.menu-text {
+  visibility: hidden;
+}
+
+.menu-text.toggle{
+  visibility: visible;
+  font-size: 20px;
+  color: white;
+}
+
+.animated-div  {
+  position: absolute;
+  border: #000000 solid 1px;
+  background-color: #424242;
+  left: 100%;
+}
+
