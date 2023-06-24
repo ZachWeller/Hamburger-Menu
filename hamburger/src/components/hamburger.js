@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../logo.svg";
 import "./hamburger.css";
 
 const BurgerMenu = () => {
-  //Use state to tell if the menu is open or closed
-  const [isOpen, setIsOpen] = useState(false);
-
-  //Grabbing the class of both the button and the menu div
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const button = document.querySelector(".hamburger");
-
   const handleMenuStatus = () => {
     const menu = document.getElementById("hamburger-menu");
-    const menuText = document.getElementById("menu-text");
+    const menuText = document.querySelectorAll("#menu-text");
     menu.classList.toggle("toggle");
-    menuText.classList.toggle("toggle");
+
+    menuText.forEach((element) => {
+      element.classList.toggle("toggle");
+    });
   };
 
   return (
@@ -27,32 +23,44 @@ const BurgerMenu = () => {
         </button>
         <div className="menu-image-container" id="menu-image-container">
           <div className="menu-item">
-            <a href="/">
+            <a className="navigation-link" href="/">
               <img src={logo} alt="Menu Item 1" className="menu-image" />
+              <div className="menu-text" id="menu-text">
+                MovieQuest
+              </div>
             </a>
-            <div className="menu-text" id="menu-text">
-              Item 1
-            </div>
           </div>
 
           <div className="menu-item">
-            <a href="/">
+            <a className="navigation-link" href="/">
               <img src={logo} alt="Menu Item 2" className="menu-image" />
+              <div className="menu-text" id="menu-text">
+                TVQuest
+              </div>
             </a>
           </div>
 
           <div className="menu-item">
-            <a href="/">
+            <a className="navigation-link" href="/">
               <img src={logo} alt="Menu Item 3" className="menu-image" />
+              <div className="menu-text" id="menu-text">
+                GameQuest
+              </div>
             </a>
           </div>
           <div className="menu-item">
-            <a href="/">
+            <a className="navigation-link" href="/">
               <img src={logo} alt="Menu Item 4" className="menu-image" />
+              <div className="menu-text" id="menu-text">
+                BevQuest
+              </div>
             </a>
+          </div>
+          <br />
+          <div className="menu-item">
+            <div className="white-text">Check Out Our Other Categories</div>
           </div>
         </div>
-        <div></div>
       </div>
     </>
     // <Menu>
